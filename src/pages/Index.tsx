@@ -78,6 +78,15 @@ const Index = () => {
 
               {/* Map Section */}
               <MapPlaceholder />
+
+              {/* Footer */}
+              <footer className="border-t bg-muted/30 mt-12">
+                <div className="py-8 text-center">
+                  <p className="text-muted-foreground text-sm">
+                    © 2024 Local Explorer. Discover amazing businesses in your area.
+                  </p>
+                </div>
+              </footer>
             </div>
           </div>
         </main>
