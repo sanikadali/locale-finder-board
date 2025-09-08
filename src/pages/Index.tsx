@@ -42,9 +42,9 @@ const Index = () => {
         </div>
       </header>
 
-      <div className="flex pt-20">
-        {/* Fixed Sidebar */}
-        <aside className="fixed left-0 top-20 bottom-0 w-80 bg-background border-r overflow-y-auto">
+      <div className="flex pt-20 min-h-screen">
+        {/* Sidebar */}
+        <aside className="w-80 bg-background border-r">
           <div className="p-6">
             <FilterSidebar
               selectedCategories={selectedCategories}
@@ -55,8 +55,8 @@ const Index = () => {
           </div>
         </aside>
 
-        {/* Scrollable Main Content */}
-        <main className="flex-1 ml-80 overflow-y-auto">
+        {/* Main Content */}
+        <main className="flex-1 overflow-y-auto">
           <div className="container mx-auto px-6 py-6">
             <div className="space-y-6">
               {/* Results Header */}
@@ -78,19 +78,24 @@ const Index = () => {
 
               {/* Map Section */}
               <MapPlaceholder />
-
-              {/* Footer */}
-              <footer className="border-t bg-muted/30 mt-12">
-                <div className="py-8 text-center">
-                  <p className="text-muted-foreground text-sm">
-                    © 2024 Local Explorer. Discover amazing businesses in your area.
-                  </p>
-                </div>
-              </footer>
             </div>
           </div>
         </main>
       </div>
+
+      {/* Full Width Footer */}
+      <footer className="bg-primary/10 border-t border-primary/20">
+        <div className="container mx-auto px-6 py-8">
+          <div className="text-center">
+            <p className="text-foreground font-medium">
+              © 2024 Local Explorer
+            </p>
+            <p className="text-muted-foreground text-sm mt-2">
+              Discover amazing businesses in your area
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
