@@ -31,6 +31,11 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
+              <img 
+                src="/lovable-uploads/c1605732-d979-42cd-9df5-086fc62ec48d.png" 
+                alt="Local Explorer Logo" 
+                className="h-10 w-10 object-contain"
+              />
               <h1 className="text-2xl font-bold text-white">Local Explorer</h1>
             </div>
             <SearchBar 
