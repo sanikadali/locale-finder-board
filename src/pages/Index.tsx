@@ -26,8 +26,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-hero-gradient shadow-lg border-b">
+      {/* Fixed Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-hero-gradient shadow-lg border-b">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -42,41 +42,45 @@ const Index = () => {
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-6">
-        <div className="flex gap-6">
-          {/* Sidebar */}
-          <aside className="shrink-0">
+      <div className="flex pt-20">
+        {/* Fixed Sidebar */}
+        <aside className="fixed left-0 top-20 bottom-0 w-80 bg-background border-r overflow-y-auto">
+          <div className="p-6">
             <FilterSidebar
               selectedCategories={selectedCategories}
               onCategoryChange={setSelectedCategories}
               minRating={minRating}
               onRatingChange={setMinRating}
             />
-          </aside>
+          </div>
+        </aside>
 
-          {/* Main Content */}
-          <main className="flex-1 space-y-6">
-            {/* Results Header */}
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-semibold text-foreground">
-                {filteredBusinesses.length} businesses found
-              </h2>
-              <p className="text-muted-foreground">
-                Showing results in your area
-              </p>
+        {/* Scrollable Main Content */}
+        <main className="flex-1 ml-80 overflow-y-auto">
+          <div className="container mx-auto px-6 py-6">
+            <div className="space-y-6">
+              {/* Results Header */}
+              <div className="flex items-center justify-between">
+                <h2 className="text-xl font-semibold text-foreground">
+                  {filteredBusinesses.length} businesses found
+                </h2>
+                <p className="text-muted-foreground">
+                  Showing results in your area
+                </p>
+              </div>
+
+              {/* Business Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredBusinesses.map((business) => (
+                  <BusinessCard key={business.id} {...business} />
+                ))}
+              </div>
+
+              {/* Map Section */}
+              <MapPlaceholder />
             </div>
-
-            {/* Business Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredBusinesses.map((business) => (
-                <BusinessCard key={business.id} {...business} />
-              ))}
-            </div>
-
-            {/* Map Section */}
-            <MapPlaceholder />
-          </main>
-        </div>
+          </div>
+        </main>
       </div>
     </div>
   );
