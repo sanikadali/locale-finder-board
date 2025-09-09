@@ -9,6 +9,7 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [minRating, setMinRating] = useState(0);
+  const [displayCount, setDisplayCount] = useState(8); // Start with 8 businesses
 
   const filteredBusinesses = useMemo(() => {
     return mockBusinesses.filter(business => {
@@ -23,6 +24,13 @@ const Index = () => {
       return matchesSearch && matchesCategory && matchesRating;
     });
   }, [searchQuery, selectedCategories, minRating]);
+
+  const displayedBusinesses = filteredBusinesses.slice(0, displayCount);
+  const hasMoreBusinesses = filteredBusinesses.length > displayCount;
+
+  const handleLoadMore = () => {
+    setDisplayCount(prev => prev + 8);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -76,10 +84,22 @@ const Index = () => {
 
               {/* Business Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredBusinesses.map((business) => (
+                {displayedBusinesses.map((business) => (
                   <BusinessCard key={business.id} {...business} />
                 ))}
               </div>
+
+              {/* Load More Button */}
+              {hasMoreBusinesses && (
+                <div className="flex justify-center mt-8">
+                  <button
+                    onClick={handleLoadMore}
+                    className="px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg font-medium transition-colors"
+                  >
+                    Load More ({filteredBusinesses.length - displayCount} remaining)
+                  </button>
+                </div>
+              )}
 
               {/* Map Section */}
               <MapPlaceholder />
