@@ -81,7 +81,7 @@ export function FilterSidebar({
           </div>
           <div className="flex justify-between text-xs text-muted-foreground">
             <span>0</span>
-            <Badge variant="outline">{minRating}+ stars</Badge>
+            <Badge variant="outline">{minRating.toFixed(1)}+ stars</Badge>
             <span>5</span>
           </div>
         </CardContent>
