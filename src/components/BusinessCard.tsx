@@ -9,9 +9,12 @@ interface BusinessCardProps {
   description: string;
   image: string;
   address: string;
+  reviewCount: number;
 }
 
-export function BusinessCard({ name, rating, category, description, image, address }: BusinessCardProps) {
+export function BusinessCard({ name, rating, category, description, image, address, reviewCount }: BusinessCardProps) {
+  const mapsQuery = `${name} ${address}`;
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
   return (
     <Card className="overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-200 cursor-pointer border-0">
       <div className="aspect-[4/3] overflow-hidden">
@@ -31,15 +34,21 @@ export function BusinessCard({ name, rating, category, description, image, addre
           <div className="flex items-center gap-1">
             <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
             <span className="font-medium text-foreground">{rating}</span>
-            <span className="text-muted-foreground text-sm">({Math.floor(Math.random() * 200) + 50} reviews)</span>
-          </div>
+            <span className="text-muted-foreground text-sm">({reviewCount} reviews)</span>          </div>
           
           <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">{description}</p>
           
-          <div className="flex items-center gap-1 text-muted-foreground">
+          <a
+            href={mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+            title={`Open ${name} in Google Maps`}
+            onClick={(e) => e.stopPropagation()}
+          >
             <MapPin className="h-3 w-3" />
-            <span className="text-xs">{address}</span>
-          </div>
+            <span className="text-xs underline underline-offset-2">{address}</span>
+          </a>
         </div>
       </CardContent>
     </Card>

@@ -8,6 +8,7 @@ interface FilterSidebarProps {
   onCategoryChange: (categories: string[]) => void;
   minRating: number;
   onRatingChange: (rating: number) => void;
+  onClearFilters: () => void;
 }
 
 const categories = [
@@ -25,7 +26,8 @@ export function FilterSidebar({
   selectedCategories, 
   onCategoryChange, 
   minRating, 
-  onRatingChange 
+  onRatingChange,
+  onClearFilters
 }: FilterSidebarProps) {
   const handleCategoryToggle = (category: string) => {
     const updatedCategories = selectedCategories.includes(category)
@@ -35,12 +37,15 @@ export function FilterSidebar({
   };
 
   return (
-    <div className="w-80 space-y-6">
+    <div className="w-72 space-y-4">
+      <div className="px-1">
+        <span className="text-sm font-medium text-foreground">Filters</span>
+      </div>
       <Card className="shadow-card border-0">
-        <CardHeader className="pb-3">
+        <CardHeader className="pb-2">
           <CardTitle className="text-lg">Categories</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
+        <CardContent className="space-y-2">
           {categories.map((category) => (
             <div key={category} className="flex items-center space-x-2">
               <Checkbox
@@ -60,11 +65,11 @@ export function FilterSidebar({
       </Card>
 
       <Card className="shadow-card border-0">
-        <CardHeader className="pb-3">
+        <CardHeader className="pb-2">
           <CardTitle className="text-lg">Minimum Rating</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="px-2">
+        <CardContent className="space-y-3">
+          <div className="px-1">
             <Slider
               value={[minRating]}
               onValueChange={(value) => onRatingChange(value[0])}
@@ -74,13 +79,25 @@ export function FilterSidebar({
               className="w-full"
             />
           </div>
-          <div className="flex justify-between text-sm text-muted-foreground">
+          <div className="flex justify-between text-xs text-muted-foreground">
             <span>0</span>
             <Badge variant="outline">{minRating}+ stars</Badge>
             <span>5</span>
           </div>
         </CardContent>
       </Card>
+
+      <div className="flex justify-center pt-1">
+        <button
+          type="button"
+          onClick={onClearFilters}
+          disabled={selectedCategories.length === 0 && minRating === 0}
+          className="text-sm px-3 py-1.5 rounded-md bg-primary text-primary-foreground hover:bg-primary/70 transition-colors disabled:opacity-50 disabled:cursor-pointer"
+          title="Clear all filters"
+        >
+          Clear filters
+        </button>
+      </div>
     </div>
   );
 }
