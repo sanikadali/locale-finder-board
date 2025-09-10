@@ -38,21 +38,15 @@ const Index = () => {
     <div className="min-h-screen bg-background">
        {/* Fixed Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-hero-gradient shadow-lg border-b">
-        <div className="container mx-auto px-4 sm:px-6 py-4">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 sm:gap-4">
-              <button
-                onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="lg:hidden p-2 text-white hover:bg-white/10 rounded-md"
-              >
-                {sidebarOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
+            <div className="flex items-center gap-4">
               <img 
                 src="src/assets/web logo.png" 
                 alt="Local Explorer Logo" 
-                className="h-10 w-12 sm:h-14 sm:w-16 object-contain"
+                className="h-14 w-16 object-contain"
               />
-              <h1 className="text-lg sm:text-2xl font-bold text-white">Local Explorer</h1>
+              <h1 className="text-2xl font-bold text-white">Local Explorer</h1>
             </div>
             <div className="flex-1 max-w-md mx-4">
               <SearchBar 
@@ -66,22 +60,10 @@ const Index = () => {
       </header>
 
       <div className="flex pt-20">
-        {/* Mobile Overlay */}
-        {sidebarOpen && (
-          <div 
-            className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-            onClick={() => setSidebarOpen(false)}
-          />
-        )}
+        
 
         {/* Sidebar */}
-        <aside className={`
-          fixed top-20 bottom-0 bg-background border-r overflow-y-auto overflow-x-hidden z-50
-          transition-transform duration-300 ease-in-out
-          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-          lg:translate-x-0 lg:static lg:z-auto
-          w-64
-        `}>
+        <aside className="fixed top-24 bottom-0 bg-background border-r overflow-y-auto overflow-x-hidden z-50 w-64">
           <div className="p-3">
             <FilterSidebar
               selectedCity={selectedCity}
@@ -100,21 +82,21 @@ const Index = () => {
         </aside>
 
         {/* Scrollable Main Content */}
-        <main className="flex-1 lg:ml-64 overflow-y-auto">
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-6">
+        <main className="flex-1 ml-64 overflow-y-auto">
+          <div className="w-full px-3 py-4">
             <div className="space-y-6">
               {/* Results Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <h2 className="text-lg sm:text-xl font-semibold text-foreground">
+              <div className="flex items-center justify-between gap-2">
+                <h2 className="text-xl font-semibold text-foreground">
                   {filteredBusinesses.length} businesses found
                 </h2>
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <p className="text-base text-muted-foreground">
                   Showing results in {selectedCity}
                 </p>
               </div>
 
               {/* Business Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+              <div className="grid grid-cols-4 gap-4">
                 
               {displayedBusinesses.map((business) => (
                   <BusinessCard key={business.id} {...business} />
@@ -126,7 +108,7 @@ const Index = () => {
                 <div className="flex justify-center mt-8">
                   <button
                     onClick={handleLoadMore}
-                    className="px-4 sm:px-6 py-2 sm:py-3 bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg font-medium transition-colors text-sm sm:text-base"
+                    className="px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg font-medium transition-colors text-base"
                   >
                     Load More
                   </button>
@@ -137,11 +119,11 @@ const Index = () => {
               <MapPlaceholder />
               {/* Footer */}
               <footer className="bg-primary/10 border-t border-primary/20">
-                <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 text-center">
-                  <p className="text-foreground font-medium text-sm sm:text-base">
+                <div className="container mx-auto px-6 py-8 text-center">
+                  <p className="text-foreground font-medium text-base">
                     © 2024 Local Explorer.
                   </p>
-                  <p className="text-muted-foreground text-xs sm:text-sm mt-2">
+                  <p className="text-muted-foreground text-sm mt-2">
                     Discover amazing businesses in your area
                   </p>
                 </div>
