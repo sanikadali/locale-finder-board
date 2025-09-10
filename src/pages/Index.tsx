@@ -58,7 +58,7 @@ const Index = () => {
 
       <div className="flex pt-20">
         {/* Sidebar */}
-        <aside className="fixed top-20 bottom-0 bg-background border-r overflow-y-auto overflow-x-hidden z-50 w-64">
+        <aside className="fixed top-24 bottom-0 bg-background border-r overflow-y-auto overflow-x-hidden z-40 w-64">
           <div className="p-3">
             <FilterSidebar
               selectedCity={selectedCity}
