@@ -4,7 +4,6 @@ import { FilterSidebar } from "@/components/FilterSidebar";
 import { BusinessCard } from "@/components/BusinessCard";
 import { InteractiveMap } from "@/components/InteractiveMap";
 import { mockBusinesses } from "@/data/mockBusinesses";
-import { BusinessList } from "@/components/BusinessList";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -18,15 +17,17 @@ const Index = () => {
     return mockBusinesses.filter(business => {
       const matchesSearch = business.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                            business.description.toLowerCase().includes(searchQuery.toLowerCase());
-      
-      const matchesCategory = selectedCategory === "All Categories" || 
+
+      const matchesCity = selectedCity === "All Cities" || business.city === selectedCity;
+
+      const matchesCategory = selectedCategory === "All Categories" ||
                              business.category === selectedCategory;
-      
+
       const matchesRating = business.rating >= minRating;
-      
-      return matchesSearch && matchesCategory && matchesRating;
+
+      return matchesSearch && matchesCity && matchesCategory && matchesRating;
     });
-  }, [searchQuery, selectedCategory, minRating]);
+  }, [searchQuery, selectedCity, selectedCategory, minRating]);
   const displayedBusinesses = filteredBusinesses.slice(0, displayCount);
   const hasMoreBusinesses = filteredBusinesses.length > displayCount;
 

@@ -6,6 +6,7 @@ export interface Business {
   description: string;
   image: string;
   address: string;
+  city: string;
   reviewCount: number;
   latitude: number;
   longitude: number;
@@ -20,18 +21,20 @@ export const mockBusinesses: Business[] = [
     description: "A pioneer in India's specialty coffee scene, known for freshly roasted, single-origin coffees. Multiple locations offer a modern, industrial vibe perfect for working or relaxing. They also sell coffee beans and brewing equipment.",
     image: "images/coffee-shop.jpg",
     address: "Multiple locations, including Bandra West, Mahalaxmi, and Kurla",
+    city: "Mumbai",
     reviewCount: 112,
     latitude: 19.0596,
     longitude: 72.8295
   },
   {
-    id: "2", 
-    name: "The Bombay Canteen", 
-    rating: 4.8, 
+    id: "2",
+    name: "The Bombay Canteen",
+    rating: 4.8,
     category: "Restaurant",
     description: "A trendy restaurant and bar celebrating the regional diversity of Indian cuisine with a modern twist. The ambiance is reminiscent of a 1960s Indian canteen, making it a vibrant and popular spot for both food and cocktails.",
-    image: "images/restaurant.jpg", 
+    image: "images/restaurant.jpg",
     address: "Kamala Mills, Lower Parel",
+    city: "Mumbai",
     reviewCount: 290,
     latitude: 19.0135,
     longitude: 72.8302
@@ -44,18 +47,20 @@ export const mockBusinesses: Business[] = [
     description: "A sprawling, luxurious fitness center with state-of-the-art equipment and a wide range of classes, including functional training, HIIT, and hot yoga. Known for its energetic atmosphere and live DJ.",
     image: "images/gym.jpg",
     address: "Breach Candy, South Mumbai",
+    city: "Mumbai",
     reviewCount: 490,
     latitude: 18.9735,
     longitude: 72.8105
   },
   {
-    id: "4", 
+    id: "4",
     name: "Phoenix Palladium",
     rating: 4.4,
     category: "Shopping",
     description: "Mumbai's premier luxury shopping destination, featuring a wide array of international high-fashion brands, designer boutiques, and upscale dining options.",
     image: "images/shop.jpg",
     address: "462, Senapati Bapat Marg, Lower Parel, Mumbai",
+    city: "Mumbai",
     reviewCount: 1220,
     latitude: 19.0135,
     longitude: 72.8302
@@ -68,6 +73,7 @@ export const mockBusinesses: Business[] = [
     description: "A popular chain known for their extensive coffee menu, delicious pastries, and cozy ambiance. Great for casual meetings or studying.",
     image: "images/coffee-shop1.jpg",
     address: "Linking Road, Bandra West",
+    city: "Mumbai",
     reviewCount: 89,
     latitude: 19.0544,
     longitude: 72.8294
@@ -76,10 +82,11 @@ export const mockBusinesses: Business[] = [
     id: "6",
     name: "Trishna",
     rating: 4.9,
-    category: "Restaurant", 
+    category: "Restaurant",
     description: "An award-winning seafood restaurant offering contemporary Indian cuisine with a focus on fresh, locally sourced ingredients.",
     image: "images/restaurant1.jpg",
     address: "7, Sai Baba Marg, Kala Ghoda, Fort",
+    city: "Mumbai",
     reviewCount: 445,
     latitude: 18.9320,
     longitude: 72.8347
@@ -90,8 +97,9 @@ export const mockBusinesses: Business[] = [
     rating: 4.3,
     category: "Fitness",
     description: "International fitness chain with modern equipment, personal training services, and group fitness classes.",
-    image: "images/gym1.jpg", 
+    image: "images/gym1.jpg",
     address: "Andheri East, Mumbai",
+    city: "Mumbai",
     reviewCount: 267,
     latitude: 19.1197,
     longitude: 72.8697
@@ -104,6 +112,7 @@ export const mockBusinesses: Business[] = [
     description: "High-end shopping mall featuring luxury brands, fine dining restaurants, and entertainment options.",
     image: "images/shop1.jpg",
     address: "High Street Phoenix, Lower Parel",
+    city: "Mumbai",
     reviewCount: 890,
     latitude: 19.0135,
     longitude: 72.8302
@@ -112,10 +121,11 @@ export const mockBusinesses: Business[] = [
     id: "9",
     name: "Waari Book Cafe",
     rating: 4.0,
-    category: "Coffee Shop", 
+    category: "Coffee Shop",
     description: "A unique time-based cafe where you can pay by the hour to relax, read from their extensive collection of books, and enjoy good food and coffee.",
     image: "images/coffee-shop2.jpg",
     address: "Kothrud, Pune",
+    city: "Pune",
     reviewCount: 850,
     latitude: 18.5087,
     longitude: 73.8055
@@ -126,20 +136,22 @@ export const mockBusinesses: Business[] = [
     rating: 4.7,
     category: "Restaurant",
     description: "Upscale seafood restaurant known for its fresh catch and innovative Mediterranean-inspired dishes.",
-    image: "images/restaurant2.jpg", 
+    image: "images/restaurant2.jpg",
     address: "Linking Road, Bandra West",
+    city: "Mumbai",
     reviewCount: 334,
     latitude: 19.0544,
     longitude: 72.8294
   },
   {
-    id: "11", 
+    id: "11",
     name: "Fitness First",
     rating: 4.0,
     category: "Fitness",
     description: "Premium fitness club offering state-of-the-art equipment, group classes, and personal training.",
     image: "images/gym2.jpg",
-    address: "Powai, Mumbai", 
+    address: "Powai, Mumbai",
+    city: "Mumbai",
     reviewCount: 123,
     latitude: 19.1176,
     longitude: 72.9060
@@ -148,10 +160,11 @@ export const mockBusinesses: Business[] = [
     id: "12",
     name: "Inorbit Mall",
     rating: 4.2,
-    category: "Shopping", 
+    category: "Shopping",
     description: "Large shopping mall with diverse retail stores, food courts, and entertainment facilities.",
     image: "images/shop2.jpg",
     address: "Malad West, Mumbai",
+    city: "Mumbai",
     reviewCount: 567,
     latitude: 19.1864,
     longitude: 72.8385
@@ -164,6 +177,7 @@ export const mockBusinesses: Business[] = [
     description: "A European-style eatery known for its artisanal bread, delectable desserts, and a refined dining experience in an elegant setting.",
     image: "images/coffee-shop3.jpg",
     address: "Kalyani Nagar, Pune",
+    city: "Pune",
     reviewCount: 1100,
     latitude: 18.5529,
     longitude: 73.8967
@@ -175,7 +189,8 @@ export const mockBusinesses: Business[] = [
     category: "Restaurant",
     description: "Fine dining restaurant offering European cuisine with an Indian twist in an elegant setting.",
     image: "images/restaurant3.jpg",
-    address: "Colaba, South Mumbai", 
+    address: "Colaba, South Mumbai",
+    city: "Mumbai",
     reviewCount: 289,
     latitude: 18.9067,
     longitude: 72.8147
@@ -188,18 +203,21 @@ export const mockBusinesses: Business[] = [
     description: "24/7 fitness center with modern equipment and personalized workout programs.",
     image: "images/gym3.jpg",
     address: "Juhu, Mumbai",
+    city: "Mumbai",
     reviewCount: 198,
     latitude: 19.1075,
     longitude: 72.8263
   },
+
   {
     id: "16",
-    name: "R City Mall", 
+    name: "R City Mall",
     rating: 4.0,
     category: "Shopping",
     description: "Comprehensive shopping destination with retail stores, dining options, and multiplex cinema.",
     image: "images/shop3.jpg",
     address: "Ghatkopar West, Mumbai",
+    city: "Mumbai",
     reviewCount: 678,
     latitude: 19.0948,
     longitude: 72.9104
@@ -210,32 +228,35 @@ export const mockBusinesses: Business[] = [
     rating: 4.2,
     category: "Coffee Shop",
     description: "International coffee and tea chain known for premium beverages and cozy atmosphere.",
-    image: "images/coffee-shop4.jpg", 
-    address: "BKC, Bandra East,Mumbai",
+    image: "images/coffee-shop4.jpg",
+    address: "BKC, Bandra East, Mumbai",
+    city: "Mumbai",
     reviewCount: 145,
     latitude: 19.0728,
     longitude: 72.8826
   },
   {
     id: "18",
-    name: "Olive Bar & Kitchen",
-    rating: 4.5,
+    name: "Hyatt Pune",
+    rating: 4.4,
     category: "Restaurant",
-    description: "Mediterranean restaurant with a charming outdoor seating area and live music.",
+    description: "Modern rooms & suites in a polished, high-end hotel with 2 restaurants, a spa & an outdoor pool.",
     image: "images/restaurant4.jpg",
-    address: "Union Park, Bandra West",
-    reviewCount: 412,
-    latitude: 19.0544,
-    longitude: 72.8294
+    address: "88, Nagar Road, Pune",
+    city: "Pune",
+    reviewCount: 11654,
+    latitude: 18.5630,
+    longitude: 73.8961
   },
   {
     id: "19",
     name: "CrossFit Box",
     rating: 4.4,
-    category: "Fitness", 
+    category: "Fitness",
     description: "High-intensity functional fitness training with certified coaches and varied workouts.",
     image: "images/gym4.jpg",
     address: "Worli, Mumbai",
+    city: "Mumbai",
     reviewCount: 87,
     latitude: 19.0176,
     longitude: 72.8180
@@ -247,7 +268,8 @@ export const mockBusinesses: Business[] = [
     category: "Shopping",
     description: "Entertainment and shopping complex with premium brands and dining options.",
     image: "images/shop4.jpg",
-    address: "Lower Parel, Mumbai", 
+    address: "Lower Parel, Mumbai",
+    city: "Mumbai",
     reviewCount: 923,
     latitude: 19.0135,
     longitude: 72.8302
@@ -260,21 +282,23 @@ export const mockBusinesses: Business[] = [
     description: "An iconic, no-frills Irani cafe that has been serving its legendary bun maska and cheese omelet with Irani chai for decades.",
     image: "images/coffee-shop5.jpg",
     address: "Dhole Patil Road, Pune",
+    city: "Pune",
     reviewCount: 18700,
     latitude: 18.5298,
     longitude: 73.8761
   },
   {
     id: "22",
-    name: "Yauatcha",
-    rating: 4.8,
+    name: "Novotel Pune Nagar Road",
+    rating: 4.5,
     category: "Restaurant",
-    description: "Contemporary dim sum teahouse offering innovative Chinese cuisine and patisserie.", 
+    description: "Sleek hotel featuring polished rooms & suites, plus 3 eateries, an outdoor pool & a poolside lounge.",
     image: "images/restaurant5.jpg",
-    address: "BKC, Bandra East",
-    reviewCount: 356,
-    latitude: 19.0728,
-    longitude: 72.8826
+    address: "Weikfield IT City Infopark, Nagar Road, Pune",
+    city: "Pune",
+    reviewCount: 18236,
+    latitude: 18.5639,
+    longitude: 73.9015
   },
   {
     id: "23",
@@ -284,6 +308,7 @@ export const mockBusinesses: Business[] = [
     description: "Well-established fitness chain with comprehensive equipment and fitness programs.",
     image: "images/gym5.jpg",
     address: "Dadar West, Mumbai",
+    city: "Mumbai",
     reviewCount: 156,
     latitude: 19.0178,
     longitude: 72.8478
@@ -294,8 +319,9 @@ export const mockBusinesses: Business[] = [
     rating: 4.1,
     category: "Shopping",
     description: "Modern shopping mall featuring fashion, lifestyle, and entertainment options.",
-    image: "images/shop5.jpg", 
+    image: "images/shop5.jpg",
     address: "Worli, Mumbai",
+    city: "Mumbai",
     reviewCount: 445,
     latitude: 19.0176,
     longitude: 72.8180
@@ -308,22 +334,23 @@ export const mockBusinesses: Business[] = [
     description: "A cozy and peaceful book cafe where the aroma of coffee and tea mingles with the scent of books, perfect for readers and those seeking a quiet escape.",
     image: "images/coffee-shop6.jpg",
     address: "Baner, Pune",
+    city: "Pune",
     reviewCount: 950,
     latitude: 18.5663,
     longitude: 73.7828
-
   },
   {
-    id: "26", 
-    name: "Zuma",
-    rating: 4.9,
+    id: "26",
+    name: "Lemon Tree Premier Pune",
+    rating: 4.2,
     category: "Restaurant",
-    description: "Contemporary Japanese izakaya-style dining with premium ingredients and stunning views.",
+    description: "Sleek quarters in an upscale hotel offering 2 restaurants, an outdoor pool & a spa, plus a gym.",
     image: "images/restaurant6.jpg",
-    address: "BKC, Bandra East", 
-    reviewCount: 278,
-    latitude: 19.0728,
-    longitude: 72.8826
+    address: "City Centre, Connaught Place, Pune",
+    city: "Pune",
+    reviewCount: 11806,
+    latitude: 18.5204,
+    longitude: 73.8567
   },
   {
     id: "27",
@@ -333,6 +360,7 @@ export const mockBusinesses: Business[] = [
     description: "Functional training studio offering 45-minute high-intensity group workouts.",
     image: "images/gym6.jpg",
     address: "Khar West, Mumbai",
+    city: "Mumbai",
     reviewCount: 92,
     latitude: 19.0696,
     longitude: 72.8370
@@ -341,10 +369,11 @@ export const mockBusinesses: Business[] = [
     id: "28",
     name: "Infiniti Mall",
     rating: 4.0,
-    category: "Shopping", 
+    category: "Shopping",
     description: "Family-friendly shopping mall with diverse retail options and food court.",
     image: "images/shop6.jpg",
     address: "Andheri West, Mumbai",
+    city: "Mumbai",
     reviewCount: 567,
     latitude: 19.1197,
     longitude: 72.8697
@@ -352,35 +381,38 @@ export const mockBusinesses: Business[] = [
   {
     id: "29",
     name: "Third Wave Coffee Roasters",
-     rating: 4.3,
+    rating: 4.3,
     category: "Coffee Shop",
     description: "A popular spot for serious coffee lovers, offering a variety of brewing methods and single-origin Arabica beans in a modern and minimalist setting.",
     image: "images/coffee-shop7.jpg",
     address: "Koregaon Park, Pune",
+    city: "Pune",
     reviewCount: 1500,
     latitude: 18.5324,
     longitude: 73.8856
   },
   {
     id: "30",
-    name: "Pali Village Cafe", 
-    rating: 4.4,
+    name: "AR Suites Jewels Royale",
+    rating: 4.6,
     category: "Restaurant",
-    description: "Charming European-style cafe serving continental cuisine in a quaint village setting.",
+    description: "Informal apartment hotel featuring an indoor pool & a gym, along with an airy restaurant.",
     image: "images/restaurant7.jpg",
-    address: "Pali Hill, Bandra West",
-    reviewCount: 234,
-    latitude: 19.0544,
-    longitude: 72.8294
+    address: "Jewels of Pune, Survey No 110, Hissa 1/1, Wakad, Pune",
+    city: "Pune",
+    reviewCount: 1284,
+    latitude: 18.6186,
+    longitude: 73.7842
   },
   {
     id: "31",
     name: "The Yoga Institute",
     rating: 4.6,
     category: "Fitness",
-    description: "Traditional yoga center offering various yoga classes and wellness programs.", 
+    description: "Traditional yoga center offering various yoga classes and wellness programs.",
     image: "images/gym7.jpg",
     address: "Santacruz East, Mumbai",
+    city: "Mumbai",
     reviewCount: 145,
     latitude: 19.0825,
     longitude: 72.8417
@@ -393,6 +425,7 @@ export const mockBusinesses: Business[] = [
     description: "Bustling street market known for trendy fashion, accessories, and street food.",
     image: "images/shop7.jpg",
     address: "Linking Road, Bandra West",
+    city: "Mumbai",
     reviewCount: 789,
     latitude: 19.0544,
     longitude: 72.8294
@@ -405,21 +438,23 @@ export const mockBusinesses: Business[] = [
     description: "A Pune institution with a vibrant, old-school atmosphere, known for its delectable baked goods, strong coffee, and a mix of international and local patrons.",
     image: "images/coffee-shop8.jpg",
     address: "Koregaon Park, Pune",
+    city: "Pune",
     reviewCount: 3000,
     latitude: 18.5303,
     longitude: 73.8821
   },
   {
     id: "34",
-    name: "Khyber",
-    rating: 4.5,
-    category: "Restaurant", 
-    description: "Legendary restaurant serving authentic North Indian cuisine in a traditional setting.",
+    name: "Magnus Star Residency, Koregaon Park Annexe",
+    rating: 3.9,
+    category: "Restaurant",
+    description: "Unfussy hotel with free Wi-Fi & breakfast, plus an international restaurant & a business center.",
     image: "images/restaurant8.jpg",
-    address: "Fort, Mumbai",
-    reviewCount: 345,
-    latitude: 18.9320,
-    longitude: 72.8347
+    address: "Koregaon Park Annexe, Mundhwa, Pune",
+    city: "Pune",
+    reviewCount: 1754,
+    latitude: 18.5376,
+    longitude: 73.8951
   },
   {
     id: "35",
@@ -427,8 +462,9 @@ export const mockBusinesses: Business[] = [
     rating: 4.2,
     category: "Fitness",
     description: "Modern fitness center offering group workouts, personal training, and wellness programs.",
-    image: "images/gym8.jpg", 
+    image: "images/gym8.jpg",
     address: "Goregaon East, Mumbai",
+    city: "Mumbai",
     reviewCount: 167,
     latitude: 19.1653,
     longitude: 72.8526
@@ -441,6 +477,7 @@ export const mockBusinesses: Business[] = [
     description: "Upscale shopping mall with premium brands, fine dining, and entertainment.",
     image: "images/shop8.jpg",
     address: "Goregaon East, Mumbai",
+    city: "Mumbai",
     reviewCount: 634,
     latitude: 19.1653,
     longitude: 72.8526
@@ -451,32 +488,35 @@ export const mockBusinesses: Business[] = [
     rating: 4.4,
     category: "Coffee Shop",
     description: "Popular bakery and cafe chain known for desserts, coffee, and baked goods.",
-    image: "images/coffee-shop9.jpg", 
+    image: "images/coffee-shop9.jpg",
     address: "Multiple locations, Mumbai",
+    city: "Mumbai",
     reviewCount: 456,
     latitude: 19.0760,
     longitude: 72.8777
   },
   {
     id: "38",
-    name: "Arola",
-    rating: 4.7,
+    name: "The Westin Pune Koregaon Park",
+    rating: 4.6,
     category: "Restaurant",
-    description: "Contemporary Spanish restaurant with innovative tapas and stunning city views.",
+    description: "Upscale hotel offering a rooftop bar, a 24-hour eatery & an outdoor pool, plus a spa & a gym.",
     image: "images/restaurant9.jpg",
-    address: "BKC, Bandra East",
-    reviewCount: 223,
-    latitude: 19.0728,
-    longitude: 72.8826
+    address: "Koregaon Park, Pune",
+    city: "Pune",
+    reviewCount: 10500,
+    latitude: 18.5303,
+    longitude: 73.8821
   },
   {
     id: "39",
     name: "Rejuve Fitness",
     rating: 4.0,
-    category: "Fitness", 
+    category: "Fitness",
     description: "Comprehensive fitness center with modern equipment and wellness services.",
     image: "images/gym9.jpg",
     address: "Chembur, Mumbai",
+    city: "Mumbai",
     reviewCount: 134,
     latitude: 19.0633,
     longitude: 72.897
@@ -487,8 +527,9 @@ export const mockBusinesses: Business[] = [
     rating: 3.9,
     category: "Shopping",
     description: "Large shopping complex with retail stores, food court, and multiplex.",
-    image: "images/shop9.jpg", 
+    image: "images/shop9.jpg",
     address: "Thane West, Mumbai",
+    city: "Mumbai",
     reviewCount: 567,
     latitude: 19.2183,
     longitude: 72.9781
@@ -500,7 +541,8 @@ export const mockBusinesses: Business[] = [
     category: "Coffee Shop",
     description: "Historic cafe and cultural landmark known for its old-world charm and continental menu.",
     image: "images/coffee-shop10.jpg",
-    address: "Colaba Causeway, Mumbai", 
+    address: "Colaba Causeway, Mumbai",
+    city: "Mumbai",
     reviewCount: 567,
     latitude: 18.9067,
     longitude: 72.8147
@@ -513,6 +555,7 @@ export const mockBusinesses: Business[] = [
     description: "Exclusive members' club with multiple dining venues and rooftop views.",
     image: "images/restaurant10.jpg",
     address: "Juhu, Mumbai",
+    city: "Mumbai",
     reviewCount: 189,
     latitude: 19.1075,
     longitude: 72.8263
@@ -523,8 +566,9 @@ export const mockBusinesses: Business[] = [
     rating: 4.3,
     category: "Fitness",
     description: "Boutique fitness studio specializing in functional training and conditioning.",
-    image: "images/gym10.jpg", 
+    image: "images/gym10.jpg",
     address: "Bandra West, Mumbai",
+    city: "Mumbai",
     reviewCount: 76,
     latitude: 19.0544,
     longitude: 72.8294
@@ -537,6 +581,7 @@ export const mockBusinesses: Business[] = [
     description: "Popular bookstore chain with extensive collection and comfortable reading areas.",
     image: "images/shop10.jpg",
     address: "Multiple locations, Mumbai",
+    city: "Mumbai",
     reviewCount: 234,
     latitude: 19.0760,
     longitude: 72.8777
@@ -549,6 +594,7 @@ export const mockBusinesses: Business[] = [
     description: "Artisan coffee roastery serving freshly roasted beans and specialty beverages.",
     image: "images/coffee-shop11.jpg",
     address: "Prabhadevi, Mumbai",
+    city: "Mumbai",
     reviewCount: 123,
     latitude: 19.0144,
     longitude: 72.8264
@@ -557,10 +603,11 @@ export const mockBusinesses: Business[] = [
     id: "46",
     name: "Wasabi by Morimoto",
     rating: 4.6,
-    category: "Restaurant", 
+    category: "Restaurant",
     description: "Upscale Japanese restaurant by celebrity chef Masaharu Morimoto.",
     image: "images/restaurant11.png",
     address: "Taj Mahal Palace, Colaba",
+    city: "Mumbai",
     reviewCount: 267,
     latitude: 18.9067,
     longitude: 72.8147
@@ -570,9 +617,10 @@ export const mockBusinesses: Business[] = [
     name: "Matrix Gym",
     rating: 3.8,
     category: "Fitness",
-    description: "Local fitness center with basic equipment and affordable membership options.", 
+    description: "Local fitness center with basic equipment and affordable membership options.",
     image: "images/gym11.jpg",
     address: "Kandivali West, Mumbai",
+    city: "Mumbai",
     reviewCount: 89,
     latitude: 19.2056,
     longitude: 72.8681
@@ -585,6 +633,7 @@ export const mockBusinesses: Business[] = [
     description: "Traditional shopping center known for jewelry, textiles, and local goods.",
     image: "images/shop11.jpg",
     address: "Haji Ali, Mumbai",
+    city: "Mumbai",
     reviewCount: 345,
     latitude: 19.0176,
     longitude: 72.8180
@@ -594,9 +643,10 @@ export const mockBusinesses: Business[] = [
     name: "Filter Coffee",
     rating: 4.0,
     category: "Coffee Shop",
-    description: "South Indian filter coffee specialist with authentic preparation methods.", 
+    description: "South Indian filter coffee specialist with authentic preparation methods.",
     image: "images/coffee-shop12.jpg",
     address: "Matunga East, Mumbai",
+    city: "Mumbai",
     reviewCount: 78,
     latitude: 19.0330,
     longitude: 72.8570
@@ -607,13 +657,13 @@ export const mockBusinesses: Business[] = [
     rating: 4.4,
     category: "Restaurant",
     description: "Pan-Asian restaurant with contemporary decor and innovative fusion cuisine.",
-    image: "images/restaurant12.jpg", 
+    image: "images/restaurant12.jpg",
     address: "BKC, Bandra East",
+    city: "Mumbai",
     reviewCount: 357,
     latitude: 19.0728,
     longitude: 72.8826
   },
-  // healthcare
   {
     id: "51",
     name: "Kokilaben Dhirubhai Ambani Hospital",
@@ -622,6 +672,7 @@ export const mockBusinesses: Business[] = [
     description: "A multispecialty hospital with a Full-Time Specialist System and advanced medical technology, known for its comprehensive care and is one of the biggest hospitals in Mumbai.",
     image: "images/hospital1.jpg",
     address: "Four Bungalows, Andheri West",
+    city: "Mumbai",
     reviewCount: 850,
     latitude: 19.1332,
     longitude: 72.8258
@@ -634,6 +685,7 @@ export const mockBusinesses: Business[] = [
     description: "A multi-specialty tertiary care hospital recognized for its excellence in cardiology and is the largest multi-organ transplant center in Maharashtra.",
     image: "images/hospital2.jpg",
     address: "Mulund Goregaon Link Road, Mulund West",
+    city: "Mumbai",
     reviewCount: 780,
     latitude: 19.1678,
     longitude: 72.9366
@@ -646,6 +698,7 @@ export const mockBusinesses: Business[] = [
     description: "A well-known tertiary care hospital with a long-standing reputation for its cardiology department and a wide range of medical services.",
     image: "images/hospital3.jpg",
     address: "Bandra West",
+    city: "Mumbai",
     reviewCount: 670,
     latitude: 19.0558,
     longitude: 72.8239
@@ -658,6 +711,7 @@ export const mockBusinesses: Business[] = [
     description: "One of Mumbai's oldest and most trusted hospitals, providing comprehensive care across multiple specialties including oncology and cardiology.",
     image: "images/hospital4.jpg",
     address: "Vile Parle West",
+    city: "Mumbai",
     reviewCount: 710,
     latitude: 19.0982,
     longitude: 72.8441
@@ -670,8 +724,10 @@ export const mockBusinesses: Business[] = [
     description: "A premier private trust hospital known for its expertise in neurology and neurosurgery, and a wide range of specialized medical services.",
     image: "images/hospital5.jpg",
     address: "Pedder Road, Tardeo",
+    city: "Mumbai",
     reviewCount: 630,
     latitude: 18.9669,
     longitude: 72.8093
   }
+
 ];
