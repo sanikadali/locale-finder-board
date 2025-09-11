@@ -5,8 +5,7 @@ import { BusinessCard } from "@/components/BusinessCard";
 import { MapPlaceholder } from "@/components/MapPlaceholder";
 import { mockBusinesses } from "@/data/mockBusinesses";
 import { BusinessList } from "@/components/BusinessList";
-import { Menu, X } from "lucide-react";
-import gym from "@/assets/web logo.png";
+
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState("Mumbai");
