@@ -45,7 +45,7 @@ const Index = () => {
                 alt="Local Explorer Logo" 
                 className="h-14 w-16 object-contain"
               />
-              <h1 className="text-2xl font-bold text-white">Local Explorer</h1>
+              <h1 className="text-2xl font-bold text-white">CityConnect</h1>
             </div>
             <div className="flex-1 max-w-md mx-4">
               <SearchBar 
@@ -97,16 +97,16 @@ const Index = () => {
               {/* Business Grid */}
               <div className="grid grid-cols-4 gap-4">
                 
-                {displayedBusinesses.map((business) => (
-                  <div
-                    key={business.id}
-                    className={`transition-all duration-300 ${
-                      highlightedBusinessId === business.id ? 'ring-4 ring-primary/50 rounded-lg scale-105' : ''
-                    }`}
-                  >
-                    <BusinessCard {...business} />
-                  </div>
-                ))}
+{displayedBusinesses.map((business) => (
+  <div
+    key={business.id}
+    className={`transition-all duration-300 h-full ${
+      highlightedBusinessId === business.id ? 'ring-4 ring-primary/50 rounded-lg scale-105' : ''
+    }`}
+  >
+    <BusinessCard {...business} />
+  </div>
+))}
               </div>
 
               {/* Load More Button */}

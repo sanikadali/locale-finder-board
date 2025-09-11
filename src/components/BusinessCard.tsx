@@ -16,7 +16,7 @@ export function BusinessCard({ name, rating, category, description, image, addre
   const mapsQuery = `${name} ${address}`;
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
   return (
-    <Card className="overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-200 cursor-pointer border-0">
+    <Card className="overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-200 cursor-pointer border-0 h-full">
       <div className="aspect-[4/3] overflow-hidden">
         <img 
           src={image} 
