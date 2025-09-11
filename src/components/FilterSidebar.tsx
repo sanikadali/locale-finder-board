@@ -16,8 +16,7 @@ interface FilterSidebarProps {
 const cities = [
   "Mumbai", 
   "Bangalore",
-  "Pune",
-  "Delhi"
+  "Pune"
 ];
 
 const categories = [
@@ -27,7 +26,6 @@ const categories = [
   "Fitness",
   "Shopping",
   "Healthcare",
-  "Entertainment",
 ];
 
 export function FilterSidebar({ 

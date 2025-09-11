@@ -14,7 +14,7 @@ export interface Business {
 export const mockBusinesses: Business[] = [
   {
     id: "1",
-    name: "Blue Tokai Coffee Roasters",
+    name: "Blue Tokai Coffee Roaster",
     rating: 4.4,
     category: "Coffee Shop",
     description: "A pioneer in India's specialty coffee scene, known for freshly roasted, single-origin coffees. Multiple locations offer a modern, industrial vibe perfect for working or relaxing. They also sell coffee beans and brewing equipment.",
@@ -110,15 +110,15 @@ export const mockBusinesses: Business[] = [
   },
   {
     id: "9",
-    name: "Third Wave Coffee",
-    rating: 4.1,
+    name: "Waari Book Cafe",
+    rating: 4.0,
     category: "Coffee Shop", 
-    description: "Modern coffee house serving specialty single-origin coffees and artisanal food in a minimalist setting.",
+    description: "A unique time-based cafe where you can pay by the hour to relax, read from their extensive collection of books, and enjoy good food and coffee.",
     image: "images/coffee-shop2.jpg",
-    address: "Bandra Kurla Complex, Bandra East",
-    reviewCount: 178,
-    latitude: 19.0728,
-    longitude: 72.8826
+    address: "Kothrud, Pune",
+    reviewCount: 850,
+    latitude: 18.5087,
+    longitude: 73.8055
   },
   {
     id: "10",
@@ -158,15 +158,15 @@ export const mockBusinesses: Business[] = [
   },
   {
     id: "13",
-    name: "Starbucks",
+    name: "The Flour Works",
     rating: 4.3,
     category: "Coffee Shop",
-    description: "Global coffee chain serving premium coffee, teas, and light snacks in a comfortable environment.", 
+    description: "A European-style eatery known for its artisanal bread, delectable desserts, and a refined dining experience in an elegant setting.",
     image: "images/coffee-shop3.jpg",
-    address: "Multiple locations across Mumbai",
-    reviewCount: 456,
-    latitude: 19.0760,
-    longitude: 72.8777
+    address: "Kalyani Nagar, Pune",
+    reviewCount: 1100,
+    latitude: 18.5529,
+    longitude: 73.8967
   },
   {
     id: "14",
@@ -211,7 +211,7 @@ export const mockBusinesses: Business[] = [
     category: "Coffee Shop",
     description: "International coffee and tea chain known for premium beverages and cozy atmosphere.",
     image: "images/coffee-shop4.jpg", 
-    address: "BKC, Bandra East",
+    address: "BKC, Bandra East,Mumbai",
     reviewCount: 145,
     latitude: 19.0728,
     longitude: 72.8826
@@ -254,15 +254,15 @@ export const mockBusinesses: Business[] = [
   },
   {
     id: "21",
-    name: "The Coffee Culture",
-    rating: 4.0,
+    name: "Vohuman Cafe",
+    rating: 4.3,
     category: "Coffee Shop",
-    description: "Local coffee house serving artisan coffee and homemade pastries in a relaxed setting.",
+    description: "An iconic, no-frills Irani cafe that has been serving its legendary bun maska and cheese omelet with Irani chai for decades.",
     image: "images/coffee-shop5.jpg",
-    address: "Churchgate, Mumbai",
-    reviewCount: 67,
-    latitude: 18.9324,
-    longitude: 72.8266
+    address: "Dhole Patil Road, Pune",
+    reviewCount: 18700,
+    latitude: 18.5298,
+    longitude: 73.8761
   },
   {
     id: "22",
@@ -302,15 +302,16 @@ export const mockBusinesses: Business[] = [
   },
   {
     id: "25",
-    name: "Cafe Coffee Day",
-    rating: 3.8,
+    name: "Pagdandi Books Chai Café",
+    rating: 4.5,
     category: "Coffee Shop",
-    description: "Popular Indian coffee chain offering affordable coffee and snacks in casual settings.",
+    description: "A cozy and peaceful book cafe where the aroma of coffee and tea mingles with the scent of books, perfect for readers and those seeking a quiet escape.",
     image: "images/coffee-shop6.jpg",
-    address: "Multiple locations, Mumbai",
-    reviewCount: 234,
-    latitude: 19.0760,
-    longitude: 72.8777
+    address: "Baner, Pune",
+    reviewCount: 950,
+    latitude: 18.5663,
+    longitude: 73.7828
+
   },
   {
     id: "26", 
@@ -350,15 +351,15 @@ export const mockBusinesses: Business[] = [
   },
   {
     id: "29",
-    name: "Prithvi Cafe",
-    rating: 4.3,
+    name: "Third Wave Coffee Roasters",
+     rating: 4.3,
     category: "Coffee Shop",
-    description: "Iconic cultural cafe attached to Prithvi Theatre, known for its bohemian atmosphere.",
+    description: "A popular spot for serious coffee lovers, offering a variety of brewing methods and single-origin Arabica beans in a modern and minimalist setting.",
     image: "images/coffee-shop7.jpg",
-    address: "Juhu, Mumbai", 
-    reviewCount: 189,
-    latitude: 19.1075,
-    longitude: 72.8263
+    address: "Koregaon Park, Pune",
+    reviewCount: 1500,
+    latitude: 18.5324,
+    longitude: 73.8856
   },
   {
     id: "30",
@@ -398,15 +399,15 @@ export const mockBusinesses: Business[] = [
   },
   {
     id: "33",
-    name: "Brewbot Eatery",
-    rating: 4.1,
+    name: "German Bakery",
+    rating: 4.7,
     category: "Coffee Shop",
-    description: "Modern cafe with craft coffee, healthy food options, and industrial decor.",
+    description: "A Pune institution with a vibrant, old-school atmosphere, known for its delectable baked goods, strong coffee, and a mix of international and local patrons.",
     image: "images/coffee-shop8.jpg",
-    address: "Lower Parel, Mumbai",
-    reviewCount: 98,
-    latitude: 19.0135,
-    longitude: 72.8302
+    address: "Koregaon Park, Pune",
+    reviewCount: 3000,
+    latitude: 18.5303,
+    longitude: 73.8821
   },
   {
     id: "34",
@@ -611,5 +612,66 @@ export const mockBusinesses: Business[] = [
     reviewCount: 357,
     latitude: 19.0728,
     longitude: 72.8826
+  },
+  // healthcare
+  {
+    id: "51",
+    name: "Kokilaben Dhirubhai Ambani Hospital",
+    rating: 4.6,
+    category: "Healthcare",
+    description: "A multispecialty hospital with a Full-Time Specialist System and advanced medical technology, known for its comprehensive care and is one of the biggest hospitals in Mumbai.",
+    image: "images/hospital1.jpg",
+    address: "Four Bungalows, Andheri West",
+    reviewCount: 850,
+    latitude: 19.1332,
+    longitude: 72.8258
+  },
+  {
+    id: "52",
+    name: "Fortis Hospital Mulund",
+    rating: 4.5,
+    category: "Healthcare",
+    description: "A multi-specialty tertiary care hospital recognized for its excellence in cardiology and is the largest multi-organ transplant center in Maharashtra.",
+    image: "images/hospital2.jpg",
+    address: "Mulund Goregaon Link Road, Mulund West",
+    reviewCount: 780,
+    latitude: 19.1678,
+    longitude: 72.9366
+  },
+  {
+    id: "53",
+    name: "Lilavati Hospital & Research Centre",
+    rating: 4.4,
+    category: "Healthcare",
+    description: "A well-known tertiary care hospital with a long-standing reputation for its cardiology department and a wide range of medical services.",
+    image: "images/hospital3.jpg",
+    address: "Bandra West",
+    reviewCount: 670,
+    latitude: 19.0558,
+    longitude: 72.8239
+  },
+  {
+    id: "54",
+    name: "Nanavati Max Super Speciality Hospital",
+    rating: 4.3,
+    category: "Healthcare",
+    description: "One of Mumbai's oldest and most trusted hospitals, providing comprehensive care across multiple specialties including oncology and cardiology.",
+    image: "images/hospital4.jpg",
+    address: "Vile Parle West",
+    reviewCount: 710,
+    latitude: 19.0982,
+    longitude: 72.8441
+  },
+  {
+    id: "55",
+    name: "Jaslok Hospital & Research Centre",
+    rating: 4.2,
+    category: "Healthcare",
+    description: "A premier private trust hospital known for its expertise in neurology and neurosurgery, and a wide range of specialized medical services.",
+    image: "images/hospital5.jpg",
+    address: "Pedder Road, Tardeo",
+    reviewCount: 630,
+    latitude: 18.9669,
+    longitude: 72.8093
   }
 ];
