@@ -121,7 +121,7 @@ const Index = () => {
                   </button>
                 </div>
               )}
-              <BusinessList></BusinessList>
+              
               {/* Map Section */}
               <InteractiveMap 
                 businesses={displayedBusinesses}
