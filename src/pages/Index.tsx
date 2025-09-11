@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { SearchBar } from "@/components/SearchBar";
 import { FilterSidebar } from "@/components/FilterSidebar";
 import { BusinessCard } from "@/components/BusinessCard";
-import { MapPlaceholder } from "@/components/MapPlaceholder";
+import { InteractiveMap } from "@/components/InteractiveMap";
 import { mockBusinesses } from "@/data/mockBusinesses";
 import { BusinessList } from "@/components/BusinessList";
 
@@ -12,7 +12,7 @@ const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [minRating, setMinRating] = useState(0);
   const [displayCount, setDisplayCount] = useState(8);
-  const [sidebarOpen, setSidebarOpen] = useState(false); 
+  const [highlightedBusinessId, setHighlightedBusinessId] = useState<string | null>(null);
 
   const filteredBusinesses = useMemo(() => {
     return mockBusinesses.filter(business => {
@@ -97,8 +97,15 @@ const Index = () => {
               {/* Business Grid */}
               <div className="grid grid-cols-4 gap-4">
                 
-              {displayedBusinesses.map((business) => (
-                  <BusinessCard key={business.id} {...business} />
+                {displayedBusinesses.map((business) => (
+                  <div
+                    key={business.id}
+                    className={`transition-all duration-300 ${
+                      highlightedBusinessId === business.id ? 'ring-4 ring-primary/50 rounded-lg scale-105' : ''
+                    }`}
+                  >
+                    <BusinessCard {...business} />
+                  </div>
                 ))}
               </div>
 
@@ -113,9 +120,13 @@ const Index = () => {
                   </button>
                 </div>
               )}
-              <BusinessList></BusinessList>
+              
               {/* Map Section */}
-              <MapPlaceholder />
+              <InteractiveMap 
+                businesses={displayedBusinesses}
+                onBusinessHighlight={setHighlightedBusinessId}
+                highlightedBusinessId={highlightedBusinessId}
+              />
               {/* Footer */}
               <footer className="bg-primary/10 border-t border-primary/20">
                 <div className="container mx-auto px-6 py-8 text-center">
