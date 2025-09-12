@@ -9,7 +9,7 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState("Mumbai");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
-  const [minRating, setMinRating] = useState(0);
+  const [minRating, setMinRating] = useState(3);
   const [displayCount, setDisplayCount] = useState(8);
   const [highlightedBusinessId, setHighlightedBusinessId] = useState<string | null>(null);
 
@@ -75,7 +75,7 @@ const Index = () => {
               onClearFilters={() => {
                 setSelectedCity("Mumbai");
                 setSelectedCategory("All Categories");
-                setMinRating(0);
+                setMinRating(3);
               }}
             />
           </div>
@@ -96,7 +96,7 @@ const Index = () => {
               </div>
 
               {/* Business Grid */}
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 
 {displayedBusinesses.map((business) => (
   <div

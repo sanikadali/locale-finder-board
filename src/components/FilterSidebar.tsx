@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { ChevronDown } from "lucide-react";
 
 interface FilterSidebarProps {
   selectedCity: string;
@@ -50,18 +51,27 @@ export function FilterSidebar({
           <CardTitle className="text-lg">City</CardTitle>
         </CardHeader>
         <CardContent>
-          <Select value={selectedCity} onValueChange={onCityChange}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select a city" />
-            </SelectTrigger>
-            <SelectContent>
-              {cities.map((city) => (
-                <SelectItem key={city} value={city}>
-                  {city}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <Popover>
+            <PopoverTrigger asChild>
+              <button className="w-full flex items-center justify-between px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm">
+                {selectedCity || "Select a city"}
+                <ChevronDown className="h-4 w-4 opacity-50" />
+              </button>
+            </PopoverTrigger>
+            <PopoverContent className="w-full p-1 bg-popover z-50" align="start">
+              <div className="grid gap-1">
+                {cities.map((city) => (
+                  <button
+                    key={city}
+                    onClick={() => onCityChange(city)}
+                    className="w-full text-left px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground rounded-sm"
+                  >
+                    {city}
+                  </button>
+                ))}
+              </div>
+            </PopoverContent>
+          </Popover>
         </CardContent>
       </Card>
 
@@ -71,18 +81,27 @@ export function FilterSidebar({
           <CardTitle className="text-lg">Category</CardTitle>
         </CardHeader>
         <CardContent>
-          <Select value={selectedCategory} onValueChange={onCategoryChange}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select a category" />
-            </SelectTrigger>
-            <SelectContent>
-              {categories.map((category) => (
-                <SelectItem key={category} value={category}>
-                  {category}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <Popover>
+            <PopoverTrigger asChild>
+              <button className="w-full flex items-center justify-between px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm">
+                {selectedCategory || "Select a category"}
+                <ChevronDown className="h-4 w-4 opacity-50" />
+              </button>
+            </PopoverTrigger>
+            <PopoverContent className="w-full p-1 bg-popover z-50" align="start">
+              <div className="grid gap-1">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => onCategoryChange(category)}
+                    className="w-full text-left px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground rounded-sm"
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </PopoverContent>
+          </Popover>
         </CardContent>
       </Card>
 
@@ -96,13 +115,13 @@ export function FilterSidebar({
               value={[minRating]}
               onValueChange={(value) => onRatingChange(value[0])}
               max={5}
-              min={0}
+              min={3}
               step={0.5}
               className="w-full"
             />
           </div>
           <div className="flex justify-between text-xs text-muted-foreground">
-            <span>0</span>
+            <span>3</span>
             <Badge variant="outline">{minRating.toFixed(1)}+ stars</Badge>
             <span>5</span>
           </div>
@@ -113,7 +132,7 @@ export function FilterSidebar({
         <button
           type="button"
           onClick={onClearFilters}
-          disabled={selectedCity === "" && selectedCategory === "All Categories" && minRating === 0}
+          disabled={selectedCity === "" && selectedCategory === "All Categories" && minRating === 3}
           className="text-sm px-3 py-1.5 rounded-md bg-primary text-primary-foreground hover:bg-primary/70 transition-colors disabled:opacity-50 disabled:cursor-pointer"
           title="Clear all filters"
         >
