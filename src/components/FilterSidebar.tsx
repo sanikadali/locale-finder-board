@@ -3,6 +3,7 @@ import { Slider } from "@/components/ui/slider";
 import { Badge } from "@/components/ui/badge";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 interface FilterSidebarProps {
   selectedCity: string;
@@ -38,6 +39,8 @@ export function FilterSidebar({
   onRatingChange,
   onClearFilters
 }: FilterSidebarProps) {
+  const [cityDropdownOpen, setCityDropdownOpen] = useState(false);
+  const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
 
   return (
     <div className="w-full max-w-72 space-y-4">
@@ -51,19 +54,38 @@ export function FilterSidebar({
           <CardTitle className="text-lg">City</CardTitle>
         </CardHeader>
         <CardContent>
-          <Popover>
+          <Popover open={cityDropdownOpen} onOpenChange={setCityDropdownOpen}>
             <PopoverTrigger asChild>
-              <button className="w-full flex items-center justify-between px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm">
+              <button 
+                className="w-full flex items-center justify-between px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm"
+                onMouseEnter={() => setCityDropdownOpen(true)}
+                onMouseLeave={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const relatedTarget = e.relatedTarget as Element;
+                  if (!relatedTarget || !relatedTarget.closest('[data-radix-popper-content-wrapper]')) {
+                    setTimeout(() => setCityDropdownOpen(false), 100);
+                  }
+                }}
+              >
                 {selectedCity || "Select a city"}
                 <ChevronDown className="h-4 w-4 opacity-50" />
               </button>
             </PopoverTrigger>
-            <PopoverContent className="w-full p-1 bg-popover z-50" align="start">
+            <PopoverContent 
+              className="p-1 bg-popover border border-border z-50" 
+              align="start"
+              style={{ width: 'var(--radix-popover-trigger-width)' }}
+              onMouseEnter={() => setCityDropdownOpen(true)}
+              onMouseLeave={() => setCityDropdownOpen(false)}
+            >
               <div className="grid gap-1">
                 {cities.map((city) => (
                   <button
                     key={city}
-                    onClick={() => onCityChange(city)}
+                    onClick={() => {
+                      onCityChange(city);
+                      setCityDropdownOpen(false);
+                    }}
                     className="w-full text-left px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground rounded-sm"
                   >
                     {city}
@@ -81,19 +103,38 @@ export function FilterSidebar({
           <CardTitle className="text-lg">Category</CardTitle>
         </CardHeader>
         <CardContent>
-          <Popover>
+          <Popover open={categoryDropdownOpen} onOpenChange={setCategoryDropdownOpen}>
             <PopoverTrigger asChild>
-              <button className="w-full flex items-center justify-between px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm">
+              <button 
+                className="w-full flex items-center justify-between px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm"
+                onMouseEnter={() => setCategoryDropdownOpen(true)}
+                onMouseLeave={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const relatedTarget = e.relatedTarget as Element;
+                  if (!relatedTarget || !relatedTarget.closest('[data-radix-popper-content-wrapper]')) {
+                    setTimeout(() => setCategoryDropdownOpen(false), 100);
+                  }
+                }}
+              >
                 {selectedCategory || "Select a category"}
                 <ChevronDown className="h-4 w-4 opacity-50" />
               </button>
             </PopoverTrigger>
-            <PopoverContent className="w-full p-1 bg-popover z-50" align="start">
+            <PopoverContent 
+              className="p-1 bg-popover border border-border z-50" 
+              align="start"
+              style={{ width: 'var(--radix-popover-trigger-width)' }}
+              onMouseEnter={() => setCategoryDropdownOpen(true)}
+              onMouseLeave={() => setCategoryDropdownOpen(false)}
+            >
               <div className="grid gap-1">
                 {categories.map((category) => (
                   <button
                     key={category}
-                    onClick={() => onCategoryChange(category)}
+                    onClick={() => {
+                      onCategoryChange(category);
+                      setCategoryDropdownOpen(false);
+                    }}
                     className="w-full text-left px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground rounded-sm"
                   >
                     {category}
