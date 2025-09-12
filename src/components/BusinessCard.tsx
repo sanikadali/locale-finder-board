@@ -1,28 +1,43 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, MapPin } from "lucide-react";
+import { Star, MapPin, Heart } from "lucide-react";
+import { useFavorites } from "@/hooks/useFavorites";
+import { Business } from "@/data/mockBusinesses";
 
-interface BusinessCardProps {
-  name: string;
-  rating: number;
-  category: string;
-  description: string;
-  image: string;
-  address: string;
-  reviewCount: number;
-}
+interface BusinessCardProps extends Business {}
 
-export function BusinessCard({ name, rating, category, description, image, address, reviewCount }: BusinessCardProps) {
+export function BusinessCard(business: BusinessCardProps) {
+  const { name, rating, category, description, image, address, reviewCount } = business;
+  const { toggleFavorite, isFavorite } = useFavorites();
+  const favorite = isFavorite(business.id);
+  
   const mapsQuery = `${name} ${address}`;
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
+  
+  const handleFavoriteClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    toggleFavorite(business);
+  };
+  
   return (
-    <Card className="overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-200 cursor-pointer border-0 h-full">
-      <div className="aspect-[4/3] overflow-hidden">
+    <Card className="overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-200 cursor-pointer border-0 h-full relative">
+      <div className="aspect-[4/3] overflow-hidden relative">
         <img 
           src={image} 
           alt={name}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />
+        <button
+          onClick={handleFavoriteClick}
+          className="absolute top-3 right-3 p-2 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white transition-all duration-200 shadow-md"
+          title={favorite ? "Remove from favorites" : "Add to favorites"}
+        >
+          <Heart 
+            className={`h-4 w-4 transition-colors ${
+              favorite ? 'fill-red-500 text-red-500' : 'text-gray-600 hover:text-red-500'
+            }`}
+          />
+        </button>
       </div>
       <CardContent className="p-4">
         <div className="space-y-3">

@@ -48,12 +48,21 @@ const Index = () => {
               />
               <h1 className="text-2xl font-bold text-white">CityConnect</h1>
             </div>
-            <div className="flex-1 max-w-md mx-4">
+            <div className="flex items-center gap-4 flex-1 max-w-md mx-4">
               <SearchBar 
                 value={searchQuery}
                 onChange={setSearchQuery}
                 placeholder="Search businesses..."
               />
+            </div>
+            <div className="flex items-center gap-2">
+              <a 
+                href="/favorites"
+                className="flex items-center gap-2 px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-colors"
+              >
+                <span>❤️</span>
+                <span className="hidden md:inline">Favorites</span>
+              </a>
             </div>
           </div>
         </div>
