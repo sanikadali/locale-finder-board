@@ -1,0 +1,7 @@
+lovable:- for entire design of project with filtering
+dall e:-for images
+gemini:- for current shops in mumbai
+cursor:- for map integration
+chatgpt: prompt generating
+unsplash: for images
+blackbox: for interactive map section
