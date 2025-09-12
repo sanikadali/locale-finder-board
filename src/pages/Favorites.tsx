@@ -1,5 +1,5 @@
 import { BusinessCard } from "@/components/BusinessCard";
-import { useFavorites } from "@/hooks/useFavorites";
+import { useFavorites } from "@/contexts/FavoritesContext";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
