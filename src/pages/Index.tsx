@@ -46,10 +46,10 @@ const Index = () => {
                 alt="Local Explorer Logo" 
                 className="h-14 w-16 object-contain hover-scale"
               />
-              <h1 className="text-3xl font-bold text-white bg-gradient-to-r from-white via-primary-glow to-white bg-clip-text text-transparent animate-scale-in hover:scale-110 transition-transform duration-300">
+<h1 className="text-3xl font-bold text-white bg-gradient-to-r from-white via-primary-glow to-white bg-clip-text text-transparent animate-scale-in hover:scale-110 transition-transform duration-300">
                 CityConnect
-              </h1>
-            </div>
+              </h1>            
+              </div>
             <div className="flex items-center gap-4 flex-1 max-w-md mx-4">
               <SearchBar 
                 value={searchQuery}
@@ -93,7 +93,7 @@ const Index = () => {
         </aside>
 
         {/* Scrollable Main Content */}
-        <main className="flex-1 ml-64 overflow-y-auto animate-fade-in">
+        <main className="flex-1 ml-64 overflow-y-auto animate-scale-in">
           <div className="w-full px-3 py-4">
             <div className="space-y-6">
               {/* Results Header */}
@@ -140,20 +140,20 @@ const Index = () => {
                 highlightedBusinessId={highlightedBusinessId}
               />
               {/* Footer */}
-              <footer className="bg-gradient-to-r from-primary via-accent to-primary text-white shadow-elegant animate-fade-in">
-                <div className="container mx-auto px-6 py-12 text-center">
-                  <div className="mb-6">
-                    <h3 className="text-xl font-bold bg-gradient-to-r from-white to-primary-glow bg-clip-text text-transparent">
+              <footer className="bg-primary/10 border-t border-primary/20">
+                <div className="container mx-auto px-6 py-6 text-center">
+                  <div className="mb-2">
+                    <h3 className="text-xl bg-gradient-to-r from-black to-primary-glow bg-clip-text text-transparent">
                       CityConnect
                     </h3>
                   </div>
-                  <p className="text-white/90 font-medium text-lg mb-3 hover-scale cursor-pointer transition-transform duration-300">
-                    © 2024 Local Explorer
+                  <p className="text-foreground font-medium text-base mb-2">
+                    © 2025 Local Explorer.
                   </p>
-                  <p className="text-white/70 text-base mb-4">
+                  <p className="text-muted-foreground text-sm mb-4">
                     Discover amazing businesses in your area
                   </p>
-                  <div className="w-20 h-1 bg-white/30 mx-auto rounded-full"></div>
+                   <div className="w-20 h-1 bg-black/30 mx-auto rounded-full"></div>
                 </div>
               </footer>
             </div>

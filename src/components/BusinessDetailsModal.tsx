@@ -45,7 +45,7 @@ export function BusinessDetailsModal({ business, open, onOpenChange }: BusinessD
 
           {/* Content Section */}
           <div className="p-6">
-            <DialogHeader className="space-y-4 text-left">
+            <DialogHeader className="space-y-1 text-left">
               <div className="flex items-start justify-between gap-4">
                 <DialogTitle className="text-3xl font-bold text-foreground leading-tight">
                   {business.name}
@@ -80,16 +80,15 @@ export function BusinessDetailsModal({ business, open, onOpenChange }: BusinessD
               </div>
             </DialogHeader>
 
-            <div className="mt-6 space-y-6">
+            <div className="mt-3 space-y-2">
               <div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">About</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-1">About</h3>
                 <p className="text-foreground leading-normal text-lg font-medium">
                   {business.description}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">Location</h3>
                 <a
                   href={mapsUrl}
                   target="_blank"
