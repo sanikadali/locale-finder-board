@@ -83,7 +83,7 @@ export function BusinessDetailsModal({ business, open, onOpenChange }: BusinessD
             <div className="mt-6 space-y-6">
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-3">About</h3>
-                <p className="text-muted-foreground leading-relaxed text-base">
+                <p className="text-foreground leading-normal text-lg font-medium">
                   {business.description}
                 </p>
               </div>
