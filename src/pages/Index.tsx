@@ -35,18 +35,20 @@ const Index = () => {
     setDisplayCount(prev => prev + 8);
   };
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background animate-fade-in">
        {/* Fixed Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-hero-gradient shadow-lg border-b">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-hero-gradient shadow-elegant border-b animate-slide-in-right">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img 
                 src="src/assets/web logo.png" 
                 alt="Local Explorer Logo" 
-                className="h-14 w-16 object-contain"
+                className="h-14 w-16 object-contain hover-scale"
               />
-              <h1 className="text-2xl font-bold text-white">CityConnect</h1>
+              <h1 className="text-3xl font-bold text-white bg-gradient-to-r from-white via-primary-glow to-white bg-clip-text text-transparent animate-scale-in hover:scale-110 transition-transform duration-300">
+                CityConnect
+              </h1>
             </div>
             <div className="flex items-center gap-4 flex-1 max-w-md mx-4">
               <SearchBar 
@@ -72,7 +74,7 @@ const Index = () => {
         
 
         {/* Sidebar */}
-        <aside className="fixed top-24 bottom-0 bg-background border-r overflow-y-auto overflow-x-hidden z-50 w-64">
+        <aside className="fixed top-24 bottom-0 bg-background border-r overflow-y-auto overflow-x-hidden z-50 w-64 animate-slide-in-right">
           <div className="p-3">
             <FilterSidebar
               selectedCity={selectedCity}
@@ -91,7 +93,7 @@ const Index = () => {
         </aside>
 
         {/* Scrollable Main Content */}
-        <main className="flex-1 ml-64 overflow-y-auto">
+        <main className="flex-1 ml-64 overflow-y-auto animate-fade-in">
           <div className="w-full px-3 py-4">
             <div className="space-y-6">
               {/* Results Header */}
@@ -105,7 +107,7 @@ const Index = () => {
               </div>
 
               {/* Business Grid */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-4 animate-scale-in">
                 
 {displayedBusinesses.map((business) => (
   <div
@@ -138,14 +140,20 @@ const Index = () => {
                 highlightedBusinessId={highlightedBusinessId}
               />
               {/* Footer */}
-              <footer className="bg-primary/10 border-t border-primary/20">
-                <div className="container mx-auto px-6 py-8 text-center">
-                  <p className="text-foreground font-medium text-base">
-                    © 2024 Local Explorer.
+              <footer className="bg-gradient-to-r from-primary via-accent to-primary text-white shadow-elegant animate-fade-in">
+                <div className="container mx-auto px-6 py-12 text-center">
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold bg-gradient-to-r from-white to-primary-glow bg-clip-text text-transparent">
+                      CityConnect
+                    </h3>
+                  </div>
+                  <p className="text-white/90 font-medium text-lg mb-3 hover-scale cursor-pointer transition-transform duration-300">
+                    © 2024 Local Explorer
                   </p>
-                  <p className="text-muted-foreground text-sm mt-2">
+                  <p className="text-white/70 text-base mb-4">
                     Discover amazing businesses in your area
                   </p>
+                  <div className="w-20 h-1 bg-white/30 mx-auto rounded-full"></div>
                 </div>
               </footer>
             </div>
