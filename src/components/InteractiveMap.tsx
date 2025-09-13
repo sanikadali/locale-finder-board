@@ -117,7 +117,7 @@ export function InteractiveMap({ businesses, onBusinessHighlight, highlightedBus
   }, []);
 
   return (
-    <Card className="shadow-card border-0 bg-muted/30">
+    <Card className="shadow-card border-0 bg-muted/30 relative z-10">
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center gap-2">
           <MapPin className="h-5 w-5 text-primary" />
